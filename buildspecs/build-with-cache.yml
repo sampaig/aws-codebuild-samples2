@@ -10,8 +10,8 @@ phases:
   post_build:
     commands:
       - aws codebuild batch-get-builds --ids $CODEBUILD_BUILD_ID >> build.info
-      - $CODEBUILD_RESOLVED_SOURCE_VERSION >> build.info
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
+      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION >> build.info
 cache:
   paths:
     - 'node_modules/**/*'
