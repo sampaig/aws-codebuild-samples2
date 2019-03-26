@@ -9,13 +9,8 @@ phases:
       - npm test
   post_build:
     commands:
-      - pwd
-      - aws codebuild batch-get-builds --ids $CODEBUILD_BUILD_ID
-      - aws codebuild batch-get-builds --ids $CODEBUILD_BUILD_ID > build.info
-      - cat > VaiCorinthians.txt
-      - pwd
-      - ls -la
-
+      - aws codebuild batch-get-builds --ids $CODEBUILD_BUILD_ID >> build.info
+      - git status
 cache:
   paths:
     - 'node_modules/**/*'
