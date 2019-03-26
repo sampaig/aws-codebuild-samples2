@@ -17,3 +17,4 @@ cache:
 artifacts:
   files:
     - '**/*'
+    - build.info
