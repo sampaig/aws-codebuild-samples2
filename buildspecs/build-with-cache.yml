@@ -6,6 +6,7 @@ phases:
       - npm install
   build:
     commands:
+      - echo "public repo1"
       - npm test
       - echo "public repo1"
 cache:
